@@ -1,29 +1,23 @@
-var per = 0;
+var title = document.getElementById('movingTitle');
 var sleep = 300;
-var direction = false, mouseOv = false;
+var speed = 3;
+var direction = false;
+var active = true;
 
-function moveTitle() {
-    setTimeout(function() {
-        document.getElementById('movingTitle').style.marginLeft = per + "%";
-        if(!direction)
-            per += 3;
-        else
-            per -= 3;
-
-        if(per > 40)
+setInterval(function () {
+    if (active) {
+        var currentMargin = Number(title.style.marginLeft.split('%')[0]);
+        title.style.marginLeft = (direction ? currentMargin - speed : currentMargin + speed) + '%';
+        if (currentMargin > 40)
             direction = true;
-        if(per < -40)
+        if (currentMargin < -40)
             direction = false;
-        if(!mouseOv)
-            moveTitle(); // Call the function again for the next step
-    }, sleep);
-}
+    }
+}, sleep);
 
-function stopMove(){
-    mouseOv = true;
-}
-
-function reStartMove(){
-    mouseOv = false;
-    moveTitle();
-}
+title.addEventListener("mouseenter", function () {
+    active = false;
+});
+title.addEventListener("mouseleave", function () {
+    active = true;
+});
