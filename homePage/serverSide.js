@@ -3,11 +3,11 @@ const https = require('https');
 const fs = require('fs');
 const axios = require('axios');
 const app = express();
-const port = 5000; 
+const port = 2053; 
 
 const options = {
-    key: fs.readFileSync('/etc/letsencrypt/live/www.slongo.biz/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/www.slongo.biz/fullchain.pem')
+    key: fs.readFileSync('/etc/letsencrypt/live/kernelkitty.it/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/kernelkitty.it/fullchain.pem')
 };
 
 // Middleware to handle CORS
@@ -36,5 +36,5 @@ app.get('/now-playing', async (req, res) => {
 });
 
 https.createServer(options, app).listen(port, () => {
-    console.log(`Server is running at https://www.slongo.biz:${port}`);
+    console.log(`Server is running at https://kernelkitty.it:${port}`);
 });

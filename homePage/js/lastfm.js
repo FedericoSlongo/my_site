@@ -1,7 +1,7 @@
 $(document).ready(function() {
     function fetchNowPlaying() {
         $.ajax({
-            url: 'https://www.slongo.biz:5000/now-playing', 
+            url: 'https://kernelkitty.it:2053/now-playing', 
             type: 'GET',
             dataType: 'json',
             success: function(data) {
