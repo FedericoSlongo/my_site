@@ -137,3 +137,17 @@ h2{
     border-style: dashed;
     width: 700px;
 }
+
+/* Image gallery and modal styles moved from devicesIOwn/computers/index.html */
+.image-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 12px 0 18px; align-items: center; }
+.image-links .notice { width: 100%; text-align: center; margin: 0 0 6px 0; font-style: italic; color: #ddd; }
+.image-links a { display: block; text-decoration: none; cursor: zoom-in; }
+.image-links img { display: block; width: 200px; max-width: calc(100vw - 40px); height: auto; border: 1px solid #666; padding: 2px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); background: #111; }
+@media (max-width: 600px) { .image-links img { width: 140px; max-width: calc(50vw - 24px); } }
+
+/* Modal / lightbox styles */
+.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); align-items: center; justify-content: center; z-index: 9999; padding: 20px; }
+.modal-overlay.show { display: flex; }
+.modal-content { max-width: 94vw; max-height: 94vh; }
+.modal-content img { display: block; max-width: 100%; max-height: calc(94vh - 20px); border: none; box-shadow: 0 6px 24px rgba(0,0,0,0.6); object-fit: contain; }
+.modal-close { position: absolute; top: 18px; right: 22px; color: #fff; background: transparent; border: none; font-size: 28px; cursor: pointer; }
