@@ -2,9 +2,9 @@
 
 <html>
   <head>
-    <link href="../../style.css" rel="stylesheet" type = "text/css">
-
+    <!-- Main site stylesheet (single link) -->
     <link href="../../style.css" rel="stylesheet" title="Default">
+
     <link href="../../alternativeStyles/altOne.css" rel="alternate stylesheet" title="Style One">
     <link href="../../alternativeStyles/altTwo.css" rel="alternate stylesheet" title="Style Two">
     <link href="../../alternativeStyles/altThree.css" rel="alternate stylesheet" title="Style Three">
@@ -74,6 +74,21 @@
       </div>
     </div>
 
+    <!-- Load gallery script (path relative to this file: ../../js/pics.js) -->
     <script src="../../js/pics.js"></script>
+    <script>
+      // If pics.js failed to load, dynamically load it as a fallback
+      (function(){
+        function ensurePics() {
+          if (window.__pics_loaded__) return;
+          var s = document.createElement('script');
+          s.src = '../../js/pics.js';
+          s.async = true;
+          document.body.appendChild(s);
+        }
+        // try after a short delay in case network blocked the initial load
+        setTimeout(ensurePics, 250);
+      })();
+    </script>
    </body>
  </html>
