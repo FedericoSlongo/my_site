@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//IT" http://www.w3.org/TR/html4/loose.dtd>
+
+<html>
+  <head>
+    <link href="../../style.css" rel="stylesheet" type = "text/css">
+
+    <link href="../../style.css" rel="stylesheet" title="Default">
+    <link href="../../alternativeStyles/altOne.css" rel="alternate stylesheet" title="Style One">
+    <link href="../../alternativeStyles/altTwo.css" rel="alternate stylesheet" title="Style Two">
+    <link href="../../alternativeStyles/altThree.css" rel="alternate stylesheet" title="Style Three">
+
+    <link rel="icon" href="./face.png">
+    <title>The Cat</title>
+
+    <meta charset="UTF-8">
+    <meta property="og:image" content="https://kernelkitty.it/face.png">
+  </head>
+  <body>   
+    <p><a href = "../"><pre style="color: white;"> ___            _   
+| _ ) __ _  __ | |__
+| _ \/ _` |/ _|| / /
+|___/\__/_|\__||_\_\
+</pre></a></p> 
+    <pre>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</pre>
+
+    
+    <h1>Blog article name</h1>
+    <p>Short description of the article</p>
+    <p>Day - Month - Year</p>
+    <br>
+    <p>Description</p>
+    <div class="image-links">
+      <a href="../../imgs/example/example">
+        <img src="../../imgs/example/example" alt="Example">
+      </a>
+      <a href="../../imgs/example/example">
+        <img src="../../imgs/example/example" alt="Example">
+      </a>
+      <p class="notice">Click an image to open them full-size.</p>
+    </div>
+
+    <!-- Load gallery script (path relative to this file: ../../js/pics.js) -->
+    <script src="../../js/pics.js"></script>
+    <script>
+      // If pics.js failed to load, dynamically load it as a fallback
+      (function(){
+        function ensurePics() {
+          if (window.__pics_loaded__) return;
+          var s = document.createElement('script');
+          s.src = '../../js/pics.js';
+          s.async = true;
+          document.body.appendChild(s);
+        }
+        // try after a short delay in case network blocked the initial load
+        setTimeout(ensurePics, 250);
+      })();
+    </script>
+  </body>
+</html> 
