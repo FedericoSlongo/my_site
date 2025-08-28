@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//IT" http://www.w3.org/TR/html4/loose.dtd>
+
+<html>
+  <head>
+    <link href="../../style.css" rel="stylesheet" type = "text/css">
+
+    <link href="../../style.css" rel="stylesheet" title="Default">
+    <link href="../../alternativeStyles/altOne.css" rel="alternate stylesheet" title="Style One">
+    <link href="../../alternativeStyles/altTwo.css" rel="alternate stylesheet" title="Style Two">
+    <link href="../../alternativeStyles/altThree.css" rel="alternate stylesheet" title="Style Three">
+
+    <link rel="icon" href="./face.png">
+    <title>The Cat</title>
+
+    <meta charset="UTF-8">
+    <meta property="og:image" content="https://kernelkitty.it/face.png">
+  </head>
+  <body>   
+    <p><a href = "../"><pre style="color: white;"> ___            _   
+| _ ) __ _  __ | |__
+| _ \/ _` |/ _|| / /
+|___/\__/_|\__||_\_\
+</pre></a></p> 
+    <pre>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</pre>
+
+    <h1>Stickerbombing my T14 Gen 1</h1>
+    <p>13 - 09 - 2024</p>
+    <br>
+    <p>A few images of the process of sticker bombing my T14 Gen 1.</p>
+    <p>The last image shows is from recently as I added a sticker.</p>
+    <div class="image-links">
+      <a href="../../imgs/T14/83decc0089e6b313280b4602220869c5.jpg">
+        <img src="../../imgs/T14/83decc0089e6b313280b4602220869c5.jpg" alt="Example">
+      </a>
+      <a href="../../imgs/T14/IMG_20240913_163351.jpg">
+        <img src="../../imgs/T14/IMG_20240913_163351.jpg" alt="Example">
+      </a>
+      <a href="../../imgs/T14/IMG_20240913_185004.jpg">
+        <img src="../../imgs/T14/IMG_20240913_185004.jpg" alt="Example">
+      </a>
+      <a href="../../imgs/T14/IMG_20250828_131517.jpg">
+        <img src="../../imgs/T14/IMG_20250828_131517.jpg" alt="Example">
+      </a>
+      <p class="notice">Click an image to open them full-size.</p>
+    </div>
+
+    <!-- Load gallery script (path relative to this file: ../../js/pics.js) -->
+    <script src="../../js/pics.js"></script>
+    <script>
+      // If pics.js failed to load, dynamically load it as a fallback
+      (function(){
+        function ensurePics() {
+          if (window.__pics_loaded__) return;
+          var s = document.createElement('script');
+          s.src = '../../js/pics.js';
+          s.async = true;
+          document.body.appendChild(s);
+        }
+        // try after a short delay in case network blocked the initial load
+        setTimeout(ensurePics, 250);
+      })();
+    </script>
+  </body>
+</html> 
