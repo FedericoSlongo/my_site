@@ -1,8 +1,39 @@
 document.addEventListener('DOMContentLoaded', function(){
   (function(){
-    const modal = document.getElementById('imgModal');
+    // create modal overlay if page doesn't include it
+    function createModalIfMissing() {
+      let modal = document.getElementById('imgModal');
+      if (modal) return modal;
+      modal = document.createElement('div');
+      modal.id = 'imgModal';
+      modal.className = 'modal-overlay';
+      modal.setAttribute('aria-hidden', 'true');
+
+      const closeBtn = document.createElement('button');
+      closeBtn.className = 'modal-close';
+      closeBtn.setAttribute('aria-label', 'Close');
+      closeBtn.textContent = '×';
+
+      const content = document.createElement('div');
+      content.className = 'modal-content';
+      content.setAttribute('role', 'dialog');
+      content.setAttribute('aria-modal', 'true');
+
+      const img = document.createElement('img');
+      img.id = 'modalImage';
+      img.src = '';
+      img.alt = 'Full-size image';
+
+      content.appendChild(img);
+      modal.appendChild(closeBtn);
+      modal.appendChild(content);
+      document.body.appendChild(modal);
+      return modal;
+    }
+
+    const modal = createModalIfMissing();
     const modalImg = document.getElementById('modalImage');
-    const closeBtn = modal?.querySelector('.modal-close');
+    const closeBtn = modal.querySelector('.modal-close');
 
     function openModal(src, alt) {
       if (!modal || !modalImg) return;
@@ -27,11 +58,17 @@ document.addEventListener('DOMContentLoaded', function(){
       const href = a.getAttribute('href');
       if (!href) return;
       e.preventDefault();
-      openModal(href, a.querySelector('img')?.alt);
+      // resolve relative URL against document location to avoid issues with spaces
+      try {
+        const resolved = new URL(href, document.baseURI).href;
+        openModal(resolved, a.querySelector('img')?.alt);
+      } catch (err) {
+        openModal(href, a.querySelector('img')?.alt);
+      }
     });
 
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
-    modal?.addEventListener('click', function(e){
+    modal.addEventListener('click', function(e){
       if (e.target === modal || e.target === closeBtn) closeModal();
     });
     document.addEventListener('keydown', function(e){
