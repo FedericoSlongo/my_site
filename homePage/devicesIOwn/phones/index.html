@@ -21,11 +21,37 @@
     <h1>Phones</h1>
     <p>My main phone is a <a href = "https://shop.vivo.com.cn/product/10009291">vivo iqoo neo 9</a> (the 12gb of ram and 256gb of storage variant)</p>
     <p>My main tablet is a poco pad <a href = "https://www.poco.net/global/poco-pad/">Poco Pad</a> (the 8gb of ram and 256gb of storage variant)</p>
+    <div class="image-links">
+      <a href="../../imgs/pocoPad/IMG_20250707_224133.jpg">
+        <img src="../../imgs/pocoPad/IMG_20250707_224133.jpg" alt="Poco Pad Tablet">
+      </a>
+      <a href="../../imgs/pocoPad/IMG_20250707_220006.jpg">
+        <img src="../../imgs/pocoPad/IMG_20250707_220006.jpg" alt="NAS">
+      </a>
+      <p class="notice">Click an image to open them full-size.</p>
+    </div>
     <p>My previous main phone was a <a href = "https://www.samsung.com/us/mobile/galaxy-a50/">samsung a50</a> (the 4gb of ram and 128gb of storage variant) (RIP)</p>
     <p>I also got other phones that I mainly use to experiment with custom roms</p>
     <p>A <a href="https://en.wikipedia.org/wiki/Samsung_Galaxy_A12">Samsung Galaxy A12</a></p>
     <p>A <a href = "https://en.wikipedia.org/wiki/Samsung_Galaxy_J6%2B">Samsung Galaxy J6+</a></p>
     <p>A <a href = "https://en.wikipedia.org/wiki/Samsung_Galaxy_A5_(2016)">Samsung Galaxy A5 2016</a></p>
     <p>A <a href = "https://en.wikipedia.org/wiki/Samsung_Galaxy_A5_(2015)">Samsung Galaxy A5 2015</a></p>
+
+    <!-- Load gallery script (path relative to this file: ../../js/pics.js) -->
+    <script src="../../js/pics.js"></script>
+    <script>
+      // If pics.js failed to load, dynamically load it as a fallback
+      (function(){
+        function ensurePics() {
+          if (window.__pics_loaded__) return;
+          var s = document.createElement('script');
+          s.src = '../../js/pics.js';
+          s.async = true;
+          document.body.appendChild(s);
+        }
+        // try after a short delay in case network blocked the initial load
+        setTimeout(ensurePics, 250);
+      })();
+    </script>
   </body>
 </html> 
