@@ -130,6 +130,23 @@ h2{
     margin-left: 10px;
 }
 
+#themeSwitcher {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    background: rgba(30, 30, 30, 0.92);
+    padding: 10px 18px 10px 14px;
+    min-width: 120px;
+    max-width: 220px;
+    color: white;
+}
+#themeSwitcher h2 {
+    margin: 0 0 6px 0;
+}
+#themeSwitcher p {
+    margin: 0;
+}
+
 .box{
     margin: auto;
     border: 5px solid gray;

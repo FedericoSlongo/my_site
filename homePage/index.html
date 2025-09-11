@@ -3,12 +3,10 @@
 
 <html lang="en">
   <head>
-    <link id="theme" href="style.css" rel="stylesheet">
-
-    <link href="./style.css" rel="stylesheet" title="Default">
-    <link href="./alternativeStyles/altOne.css" rel="alternate stylesheet" title="Style One" media = "Style One">
-    <link href="./alternativeStyles/altTwo.css" rel="alternate stylesheet" title="Style Two" media = "Style Two">
-    <link href="./alternativeStyles/altThree.css" rel="alternate stylesheet" title="Style Three" media = "Style Three">
+    <link id="theme-default" href="./style.css" rel="stylesheet">
+    <link id="theme-one" href="./alternativeStyles/altOne.css" rel="stylesheet" disabled>
+    <link id="theme-two" href="./alternativeStyles/altTwo.css" rel="stylesheet" disabled>
+    <link id="theme-three" href="./alternativeStyles/altThree.css" rel="stylesheet" disabled>
     <link rel="icon" href="../face.png">
 
 
@@ -77,20 +75,25 @@
     <p><a href = "./privacyPolicy/">Privacy Policies</a> | <a href = "./features/">Features of the site</a> | <a href="./credits/">Credits</a></p>
     
 
-    <!--Don't work yet ;-;
-    <div id = "songDiv">
+    <div id="themeSwitcher">
       <h2>Change the theme</h2>
-      <pees><a href="#" onclick="enableStylesheet('./style.css')">Defualt</a>, <a href="#" onclick="enableStylesheet('./alternativeStyles/altOne')">One</a>, Two, Three</pees>
+      <p>
+        <a href="#" onclick="enableStylesheet('default'); return false;">Default</a>,
+        <a href="#" onclick="enableStylesheet('one'); return false;">One</a>,
+        <a href="#" onclick="enableStylesheet('two'); return false;">Two</a>,
+        <a href="#" onclick="enableStylesheet('three'); return false;">Three</a>
+      </p>
     </div>
-    -->
     <script>
-      const enableStylesheet = (node) => {
-        node.media = "";
-      };
-
-      const disableStylesheet = (node) => {
-        node.media = "none";
-      };
+      function enableStylesheet(theme) {
+        var themes = ["default", "one", "two", "three"];
+        themes.forEach(function(t) {
+          var link = document.getElementById("theme-" + t);
+          if (link) {
+            link.disabled = (t !== theme);
+          }
+        });
+      }
     </script>
 
     <script>
