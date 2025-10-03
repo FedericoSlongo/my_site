@@ -1,0 +1,43 @@
+@font-face {
+    font-family: "Monocraft";
+    src: url(../homePage/fonts/Monocraft.ttf) format("truetype");
+    font-style: normal;
+}
+
+body {
+    background-color: #000000;
+}
+
+p
+{
+    color: white;
+    white-space: nowrap;
+    font-size: 13px;
+    font-family: 'monocraft';
+}
+
+b
+{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+pre
+{
+    color: white;
+    font-size: 12px;
+}
+
+/* Links */
+a:link {
+    color: aquamarine;
+    text-decoration: none;
+  }
+a:visited {
+    color: lightcyan;
+    text-decoration: none;
+}
+a:hover {
+    color: hotpink;
+    text-decoration: underline;
+}
