@@ -14,6 +14,7 @@ p
     white-space: nowrap;
     font-size: 13px;
     font-family: 'monocraft';
+    padding-left: 20px;
 }
 
 b
@@ -26,6 +27,12 @@ pre
 {
     color: white;
     font-size: 12px;
+    padding-left: 20px;
+}
+
+.topPad {
+    padding-top: 10px;
+    color: red;
 }
 
 /* Links */
