@@ -13,7 +13,22 @@ $(document).ready(function() {
             }
         });
     }
+    function fetchRndTopTrack() {
+        $.ajax({
+            url: 'https://kernelkitty.it:2053/getRandomTopTrack', 
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                var topTrackText = `<a href="${data.url}" target="_blank">${data.name}</a>`;
+                $('#topTrack').html(topTrackText);
+            },
+            error: function(error) {
+                console.log('Error:', error);
+            }
+        });
+    }
 
+    fetchRndTopTrack();
     fetchNowPlaying();
     setInterval(fetchNowPlaying, 10000); // Fetch every 10 seconds
 });
