@@ -1,1 +1,11 @@
+ErrorDocument 400 /errorPage/400.html
+ErrorDocument 401 /errorPage/401.html
+ErrorDocument 402 /errorPage/402.html
+ErrorDocument 403 /errorPage/403.html
 ErrorDocument 404 /errorPage/404.html
+ErrorDocument 408 /errorPage/408.html
+ErrorDocument 410 /errorPage/410.html
+ErrorDocument 418 /errorPage/418.html
+ErrorDocument 426 /errorPage/426.html
+ErrorDocument 429 /errorPage/429.html
+ErrorDocument 451 /errorPage/451.html
