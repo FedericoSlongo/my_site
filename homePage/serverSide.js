@@ -6,7 +6,7 @@ const app = express();
 const port = 2053; 
 
 const options = {
-    key: fs.readFileSync('/etc/letsencrypt/live/kernelkitty.it/privkey.pem'),
+    key: fs.readFileSync('/etc/letsencrypt/live/kernelkitty.it/privkey.pem'), // You can put the path to your letsencrypt keys here to get https support
     cert: fs.readFileSync('/etc/letsencrypt/live/kernelkitty.it/fullchain.pem')
 };
 
@@ -32,6 +32,19 @@ app.get('/now-playing', async (req, res) => {
     } catch (error) {
         console.error('Error:', error);
         res.status(500).send('Internal Server Error');
+    }
+});
+
+app.get('/getRandomTopTrack', async(req, res) => {
+    try {
+        const response = await axios.get(`http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${user}&api_key=${apiKey}&limit=200&format=json`);
+        const tracks = response.data.toptracks.track;
+        const randomlyChoosenTrack = Math.floor(Math.random() * tracks.length);
+        const choosenTrack = tracks[randomlyChoosenTrack];
+        res.json({ name : choosenTrack.name, url: choosenTrack.url });
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).send('Internal Server Error Last Fm');
     }
 });
 
