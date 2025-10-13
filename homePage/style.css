@@ -122,6 +122,17 @@ h2{
     font-size: 15px;
 }
 
+textarea{
+    background-color: #390020;
+    color: white;
+    font-family: 'monocraft';
+    border: 0px;
+    max-width:300px;
+    min-width:300px;
+    max-height:100px;
+    min-height:100px;
+}
+
 #songDiv{
     width: 50%;
 
@@ -145,6 +156,13 @@ h2{
 }
 #themeSwitcher p {
     margin: 0;
+}
+
+#siteButtons {
+    position: fixed;
+    right: 20px;
+    padding: 10px 18px 10px 14px;
+    color: white;
 }
 
 .box{
