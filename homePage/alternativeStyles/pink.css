@@ -1,0 +1,185 @@
+@font-face {
+    font-family: "Monocraft";
+    src: url(../fonts/Monocraft.ttf) format("truetype");
+    font-style: normal;
+}
+
+body {
+    background-color: #f5e0dc;
+    zoom: 90%; /* https://developer.mozilla.org/en-US/docs/Web/CSS/zoom 
+    https://caniuse.com/css-zoom */
+}
+
+iframe{
+    background-color: #f5e0dc;
+}
+
+h1{
+    color: #45475a;
+    white-space: nowrap;
+    font-family: 'monocraft';
+    text-align: center;
+    font-size: 25px;
+}
+
+p
+{
+    color: #45475a;
+    white-space: nowrap;
+    font-size: 13px;
+    font-family: 'monocraft';
+    text-align: center;
+}
+
+b
+{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+pre
+{
+    color: #e78284;
+    font-size: 12px;
+    text-align: center;
+}
+
+table{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Links */
+a:link {
+    color: #585b70;
+    text-decoration: none;
+  }
+a:visited {
+    color: #7f849c;
+    text-decoration: none;
+}
+a:hover {
+    color: #11111b;
+    text-decoration: underline;
+}
+
+#twodotsthree
+{
+    /* :3 doesn't look good at around 13xp */
+    font-size: 16px;
+}
+
+#straight
+{
+    /* Not me */
+    white-space: nowrap;
+    display: inline;
+    text-align: center;
+    line-break: strict;
+}
+
+#title
+{
+    white-space:pre;
+    color: #45475a;
+    font-family: serif, sans-serif;
+}
+
+table td.yellow 
+{ 
+    color: #fdca40 !important; 
+} 
+table td.lightBlue 
+{ 
+    color: #33a1fd !important; 
+} 
+table td.pink 
+{ 
+    color: #db93b0 !important; 
+} 
+
+
+/* Div config for "Song I like" */
+
+pees{
+    color: #45475a;
+    white-space: nowrap;
+    font-size: 12px;
+    font-family: 'monocraft';
+    text-align: center;
+}
+
+h2{
+    color: #45475a;
+    white-space: nowrap;
+    font-family: 'monocraft';
+    font-size: 15px;
+}
+
+textarea{
+    background-color: #f5e0dc;
+    color: #45475a;
+    font-family: 'monocraft';
+    border: 0px;
+    max-width:300px;
+    min-width:300px;
+    max-height:100px;
+    min-height:100px;
+}
+
+#songDiv{
+    width: 50%;
+
+    position: absolute;
+    bottom: 10px;
+    margin-left: 10px;
+}
+
+#themeSwitcher {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    background: rgba(30, 30, 30, 0.92);
+    padding: 10px 18px 10px 14px;
+    min-width: 120px;
+    max-width: 220px;
+    color: white;
+}
+#themeSwitcher h2 {
+    margin: 0 0 6px 0;
+    color: white;
+}
+#themeSwitcher p {
+    margin: 0;
+    color: white;
+}
+
+#siteButtons {
+    position: fixed;
+    right: 20px;
+    padding: 10px 18px 10px 14px;
+    color: white;
+}
+
+.box{
+    margin: auto;
+    border: 5px solid gray;
+    border-radius: 5px;
+    border-style: dashed;
+    width: 700px;
+}
+
+/* Image gallery and modal styles */
+.image-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 12px 0 18px; align-items: center; }
+.image-links .notice { width: 100%; text-align: center; margin: 0 0 6px 0; font-style: italic; color: #ddd; }
+.image-links a { display: block; text-decoration: none; cursor: zoom-in; }
+.image-links img { display: block; width: 200px; max-width: calc(100vw - 40px); height: auto; border: 1px solid #666; padding: 2px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); background: #111; }
+@media (max-width: 600px) { .image-links img { width: 140px; max-width: calc(50vw - 24px); } }
+
+/* Modal / lightbox styles */
+.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); align-items: center; justify-content: center; z-index: 9999; padding: 20px; }
+.modal-overlay.show { display: flex; }
+.modal-content { max-width: 94vw; max-height: 94vh; }
+.modal-content img { display: block; max-width: 100%; max-height: calc(94vh - 20px); border: none; box-shadow: 0 6px 24px rgba(0,0,0,0.6); object-fit: contain; }
+.modal-close { position: absolute; top: 18px; right: 22px; color: #fff; background: transparent; border: none; font-size: 28px; cursor: pointer; }
