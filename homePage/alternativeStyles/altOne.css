@@ -6,6 +6,8 @@
 
 body {
     background-color: #44302f;
+    zoom: 90%; /* https://developer.mozilla.org/en-US/docs/Web/CSS/zoom 
+    https://caniuse.com/css-zoom */
 }
 
 iframe{
@@ -17,7 +19,7 @@ h1{
     white-space: nowrap;
     font-family: 'monocraft';
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 p
@@ -120,7 +122,7 @@ h2{
 
     position: absolute;
     bottom: 10px;
-    margin-left: 25%;
+    margin-left: 10px;
 }
 
 #themeSwitcher {
