@@ -55,8 +55,8 @@ app.get('/getImage', async(req, res) => {
             return res.status(400).json({ error: 'Missing artist or song parameter' });
         }
 
-        const response = await axios.get(`http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${apiKey}&artist=${artist}&track=${song}&format=json`);
-        const image = response.data.track.album.image[3];
+        const response = await axios.get(`http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${apiKey}&artist=${encodeURIComponent(artist)}&track=${encodeURIComponent(song)}&format=json`);
+        const image = response.data.track.album.image[3]['#text'];
         res.json({ image });
     } catch (error) {
         console.error('Error:', error);
