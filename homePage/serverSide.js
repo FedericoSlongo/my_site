@@ -48,6 +48,22 @@ app.get('/getRandomTopTrack', async(req, res) => {
     }
 });
 
+app.get('/getImage', async(req, res) => {
+    try {
+        const { artist, song } = req.query;
+        if (!artist || !song) {
+            return res.status(400).json({ error: 'Missing artist or song parameter' });
+        }
+
+        const response = await axios.get(`http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${apiKey}&artist=${artist}&track=${song}&format=json`);
+        const image = response.data.track.album.image[3];
+        res.json({ image });
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).send('Internal Server Error Last Fm');
+    }
+});
+
 https.createServer(options, app).listen(port, () => {
     console.log(`Server is running at https://kernelkitty.it:${port}`);
 });
